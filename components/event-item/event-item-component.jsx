@@ -8,14 +8,7 @@ import DateIcon from "../icons/date-icon";
 import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 
-const EventItemComponent = ({
-  id,
-  title,
-  description,
-  location,
-  date,
-  image,
-}) => {
+const EventItem = ({ id, title, description, location, date, image }) => {
   const updateDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
     month: "long",
@@ -27,7 +20,7 @@ const EventItemComponent = ({
 
   return (
     <li className={styles.item}>
-      <img src={image} alt={title} />
+      <img src={`/${image}`} alt={title} />
       <div className={styles.content}>
         <div className={styles.summary}>
           <h2> {title} </h2>
@@ -53,4 +46,4 @@ const EventItemComponent = ({
   );
 };
 
-export default EventItemComponent;
+export default EventItem;
