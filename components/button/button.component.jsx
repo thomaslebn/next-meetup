@@ -2,10 +2,10 @@ import Link from "next/link";
 
 import styles from "./button.module.css";
 
-const Button = (props) => {
+const Button = ({ link, children }) => {
   return (
-    <Link href={props.link}>
-      <a className={styles.btn}> {props.children} </a>
+    <Link href={link}>
+      <a className={styles.btn}> {children} </a>
     </Link>
   );
 };
